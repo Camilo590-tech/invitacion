@@ -1,0 +1,90 @@
+:root {
+  --cream: #fbf4ec; --paper: #fffdf9; --ink: #4c4541; --muted: #93857b;
+  --rose: #dba4a7; --blue: #9bbdce; --gold: #c5a36d;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--ink); background: radial-gradient(ellipse at 50% 20%, #fffdf9 0%, var(--cream) 65%, #f5e9df 100%); font-family: "DM Sans", sans-serif; }
+.ambient { position: fixed; border-radius: 50%; filter: blur(2px); opacity: .4; pointer-events: none; }
+.ambient-one { width: 270px; height: 270px; top: 8%; left: -130px; background: #f1d8d3; }
+.ambient-two { width: 320px; height: 320px; bottom: -160px; right: -120px; background: #dce8e8; }
+.scene { position: relative; width: min(100%, 760px); min-height: 100vh; margin: auto; padding: 32px 20px 20px; display: flex; flex-direction: column; align-items: center; }
+.eyebrow { font-size: 10px; letter-spacing: .22em; color: #a58b78; text-align: center; line-height: 1.8; }
+.tiny-star { color: var(--gold); padding: 0 8px; }
+.intro { text-align: center; width: 100%; padding-top: clamp(32px, 7vh, 66px); animation: fadeUp .8s ease both; }
+.kicker { text-transform: uppercase; letter-spacing: .17em; color: #ad8f83; font-size: 10px; font-weight: 700; margin: 0 0 14px; }
+h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; }
+h1 { font-size: clamp(34px, 7vw, 55px); line-height: 1.13; margin: 0 auto 14px; max-width: 620px; }
+h1 em, h2 em { color: #bd8d91; font-weight: 500; }
+.intro-copy { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 auto; max-width: 340px; }
+.egg-button { border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; flex-direction: column; position: relative; margin: 24px auto 0; padding: 4px 26px 0; color: inherit; -webkit-tap-highlight-color: transparent; }
+.egg-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 8px; border-radius: 50%; }
+.egg { position: relative; display: block; width: 142px; height: 178px; border-radius: 49% 49% 46% 46% / 58% 58% 42% 42%; transform: rotate(-3deg); background: linear-gradient(135deg, #fffef9 5%, #f4e9d9 52%, #e7d4c3 100%); box-shadow: inset -12px -8px 17px #d8c5b355, inset 10px 9px 18px #fff, 0 20px 30px #b99b7d25; animation: eggFloat 3.2s ease-in-out infinite; transition: transform .5s, opacity .4s; }
+.egg::before { content: ""; position: absolute; width: 45%; height: 68%; top: 9%; left: 14%; border-radius: 50%; background: linear-gradient(90deg, #ffffff9c, #ffffff00); transform: rotate(8deg); }
+.egg-speck { position: absolute; width: 5px; height: 7px; border-radius: 50%; background: #c8ad8e88; }
+.speck-a { top: 35%; left: 24%; transform: rotate(25deg); }.speck-b { top: 55%; right: 23%; width: 4px; height: 5px; }.speck-c { top: 68%; left: 39%; width: 3px; height: 4px; }.speck-d { top: 28%; right: 31%; width: 3px; height: 4px; }
+.egg-crack { position: absolute; left: 28%; right: 25%; top: 48%; height: 18px; opacity: 0; border-top: 2px solid #c6a98b; clip-path: polygon(0 50%, 18% 10%, 32% 80%, 48% 20%, 64% 80%, 80% 10%, 100% 50%, 100% 60%, 80% 20%, 64% 90%, 48% 30%, 32% 90%, 18% 20%, 0 60%); }
+.tap-hint { margin-top: 18px; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: #a18a7b; }
+.sparkle { position: absolute; color: #c7a56c; animation: twinkle 2s ease-in-out infinite; }
+.sparkle-a { top: 18px; left: 0; font-size: 23px; }.sparkle-b { top: 60px; right: -2px; font-size: 22px; animation-delay: .6s; }.sparkle-c { bottom: 70px; left: 8px; font-size: 13px; animation-delay: 1s; }
+.small-note { color: #aa9b90; font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 14px; margin: 26px 0 0; }
+footer { margin-top: auto; padding-top: 34px; color: #b6a396; font-size: 9px; letter-spacing: .24em; text-align: center; }
+footer span { color: #cf9ea2; font-size: 13px; padding-left: 5px; }
+.hidden { display: none !important; }
+.invitation { width: 100%; padding: 32px 0 0; animation: fadeUp .9s ease both; }
+.card { position: relative; width: min(100%, 510px); margin: 0 auto; padding: 28px clamp(20px, 6vw, 48px) 30px; text-align: center; background: var(--paper); border: 1px solid #e8d9c7; box-shadow: 0 22px 70px #a78d7120; outline: 1px solid #e8d9c766; outline-offset: 6px; }
+.card::before, .card::after { content: "✧"; position: absolute; color: #c9aa78; font-size: 18px; }.card::before { top: 10px; left: 12px; }.card::after { bottom: 10px; right: 12px; }
+.card-top { display: flex; justify-content: center; align-items: center; gap: 13px; color: #b79a82; font-size: 8px; letter-spacing: .2em; }.card-top span { color: #d1a4a2; font-size: 15px; }
+.card-illustration { height: 72px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #c8a878; }
+.branch { font-size: 45px; opacity: .8; }.branch-left { transform: rotate(-30deg) scaleX(-1); }.branch-right { transform: rotate(30deg); }.little-heart { color: #d6a2a4; font-size: 22px; }
+.card h2 { font-size: clamp(29px, 6vw, 39px); line-height: 1.2; margin: 0 0 16px; }
+.ornament { display: flex; justify-content: center; align-items: center; gap: 12px; color: #c4a36d; margin: 18px 0; }.ornament span { width: 44px; height: 1px; background: #dfcba9; }
+.card-message { max-width: 340px; margin: 0 auto 22px; font-family: "Playfair Display", Georgia, serif; color: #7f736a; font-size: 15px; line-height: 1.8; }
+.invite-line { color: #a28c7d; font-size: 11px; letter-spacing: .03em; }
+.mystery-options { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 17px 0 26px; }.option { padding: 8px 12px; border-radius: 30px; font-size: 11px; }.pink { color: #b87f87; background: #f8e9e8; }.blue { color: #719caf; background: #e8f1f4; }
+.details { border-top: 1px solid #eee2d5; border-bottom: 1px solid #eee2d5; padding: 19px 0; display: grid; gap: 16px; text-align: left; max-width: 315px; margin: auto; }
+.detail { display: flex; gap: 13px; align-items: center; }.detail-icon { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #e8d7c3; border-radius: 50%; color: #bd9b70; font-size: 17px; flex-shrink: 0; }.detail small { display: block; font-size: 8px; letter-spacing: .18em; color: #ad9584; margin-bottom: 4px; }.detail strong { display: block; font-size: 12px; font-weight: 600; color: #62564e; overflow-wrap: anywhere; }
+.parents { font-family: "Playfair Display", Georgia, serif; font-size: 16px; color: #8f7970; margin: 22px 0 19px; }.parents strong { display: block; color: #b17f83; font-style: italic; font-weight: 500; margin-top: 5px; }
+.rsvp { display: flex; justify-content: center; align-items: center; gap: 12px; margin: auto; width: fit-content; max-width: 100%; background: #827d70; color: white; text-decoration: none; border-radius: 3px; padding: 13px 18px; font-size: 11px; line-height: 1.4; transition: background .2s, transform .2s; }.rsvp:hover { background: #6f6a5e; transform: translateY(-2px); }.rsvp span { font-size: 16px; }
+.contact-note { color: #a28c7d; font-size: 11px; line-height: 1.6; max-width: 280px; margin: 16px auto 0; }
+.footer-note { color: #b6a194; font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 12px; margin: 19px 0 0; }
+.replay { display: block; margin: 25px auto 0; border: 0; background: transparent; color: #9e8878; font: inherit; font-size: 11px; cursor: pointer; padding: 8px 12px; }
+.crack-mode .egg { animation: crackEgg .7s ease forwards; }.crack-mode .egg-crack { opacity: 1; }.crack-mode .sparkle { animation: burst .7s ease forwards; }.crack-mode .tap-hint { opacity: 0; }
+.confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 3; }.confetti span { position: absolute; top: -20px; width: 7px; height: 11px; border-radius: 2px; animation: fall 2.5s ease-in forwards; }
+@keyframes eggFloat { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+@keyframes twinkle { 0%,100% { opacity: .45; transform: scale(.85) rotate(0); } 50% { opacity: 1; transform: scale(1.15) rotate(15deg); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes crackEgg { 0% { transform: rotate(-3deg) scale(1); } 35% { transform: rotate(5deg) scale(1.06); } 65% { transform: rotate(-8deg) scale(1.1); opacity: 1; } 100% { transform: rotate(18deg) scale(.65) translateY(-25px); opacity: 0; } }
+@keyframes burst { to { opacity: 0; transform: scale(2.5) translateY(-20px); } }
+@keyframes fall { to { transform: translateY(110vh) rotate(620deg); opacity: 0; } }
+@media (max-width: 420px) { .scene { padding-left: 16px; padding-right: 16px; }.intro { padding-top: 36px; }.egg { width: 126px; height: 160px; }.card { padding-top: 24px; padding-bottom: 25px; }.card-message { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+
+
+/* Animación mejorada: el cascarón se separa y libera una explosión de luz. */
+.egg-button { isolation: isolate; }
+.egg { overflow: visible; }
+.egg-glow { position: absolute; z-index: -1; width: 170px; height: 170px; left: -14px; top: 0; border-radius: 50%; background: radial-gradient(circle, #fff7d7 0%, #f8d9e7a8 35%, #cde7f300 72%); opacity: 0; transform: scale(.25); pointer-events: none; }
+.egg-shell { position: absolute; z-index: 2; left: 0; right: 0; display: block; height: 53%; background: linear-gradient(135deg, #fffef9 5%, #f4e9d9 52%, #e7d4c3 100%); box-shadow: inset -8px -5px 12px #d8c5b355, inset 8px 7px 12px #fff; opacity: 0; pointer-events: none; }
+.egg-shell-top { top: 0; border-radius: 70% 70% 12% 12% / 100% 100% 12% 12%; clip-path: polygon(0 0,100% 0,100% 78%,82% 70%,68% 88%,50% 74%,31% 90%,15% 72%,0 82%); }
+.egg-shell-bottom { bottom: 0; border-radius: 12% 12% 48% 48% / 12% 12% 75% 75%; clip-path: polygon(0 15%,15% 27%,31% 10%,50% 25%,68% 9%,82% 24%,100% 12%,100% 100%,0 100%); }
+.crack-mode .egg { animation: eggShake .45s ease-in-out 2, eggDisappear .55s ease 0.8s forwards; }
+.crack-mode .egg-shell { opacity: 1; }
+.crack-mode .egg-shell-top { animation: shellTopFly .9s cubic-bezier(.2,.8,.2,1) .55s forwards; }
+.crack-mode .egg-shell-bottom { animation: shellBottomFly .9s cubic-bezier(.2,.8,.2,1) .55s forwards; }
+.crack-mode .egg-glow { animation: glowBurst 1.15s ease-out .4s forwards; }
+.crack-mode .egg-crack { opacity: 1; animation: crackFlash .45s ease forwards; }
+.opening-scene .intro-copy, .opening-scene .small-note, .opening-scene .kicker, .opening-scene h1 { animation: softenAway .55s ease forwards; }
+.magic-particles { position: fixed; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
+.magic-particle { position: absolute; left: 50%; top: 42%; color: #c9a15e; font-size: 21px; opacity: 0; animation: particleBurst 1.2s cubic-bezier(.12,.75,.25,1) var(--delay) forwards; text-shadow: 0 2px 12px #fff3c9; }
+.invitation:not(.hidden) .card { animation: cardMagic 1s cubic-bezier(.18,.75,.25,1) both; }
+@keyframes eggShake { 0%,100% { transform: rotate(-3deg) translateX(0); } 20% { transform: rotate(-9deg) translateX(-5px); } 45% { transform: rotate(8deg) translateX(5px); } 70% { transform: rotate(-6deg) translateX(-3px); } }
+@keyframes shellTopFly { to { transform: translate(-34px,-105px) rotate(-28deg); opacity: 0; } }
+@keyframes shellBottomFly { to { transform: translate(28px,75px) rotate(19deg); opacity: 0; } }
+@keyframes eggDisappear { to { opacity: 0; transform: scale(.7); } }
+@keyframes glowBurst { 0% { opacity: 0; transform: scale(.25); } 35% { opacity: 1; transform: scale(1.35); } 100% { opacity: 0; transform: scale(2.4); } }
+@keyframes crackFlash { 0% { opacity: 0; } 30%,70% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes particleBurst { 0% { opacity: 0; transform: translate(0,0) scale(.3) rotate(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--x),var(--y)) scale(1.25) rotate(110deg); } }
+@keyframes softenAway { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes cardMagic { from { opacity: 0; transform: translateY(28px) scale(.94); filter: blur(5px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) { .egg, .egg-shell, .egg-glow, .magic-particle, .invitation:not(.hidden) .card { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
